@@ -29,6 +29,9 @@
         xs12
       >
         <h2 class="headline font-weight-bold mb-3">What's next?</h2>
+        <div class="mb-3">
+          <v-btn color="error">Внимание!</v-btn>
+        </div>
 
         <v-layout justify-center>
           <a
