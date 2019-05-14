@@ -1,22 +1,6 @@
 <template>
   <v-container fluid grid-list-sm>
     <v-layout row wrap>
-
-      <v-flex xs12>
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        ></v-img>
-      </v-flex>
-
-      <v-flex xs12 mb-4>
-        <h1 class="display-2 font-weight-bold mb-3 text-xs-center">
-          Welcome to Vuetify
-        </h1>
-      </v-flex>
-
       <v-flex d-flex xs12 order-xs5>
         <v-layout column>
           <v-flex d-flex>
@@ -40,16 +24,8 @@
           </v-flex>
           <v-flex d-flex>
             <v-layout row>
-              <v-flex
-                v-for="n in 2"
-                :key="n"
-                d-flex
-              >
-                <v-card
-                  color="amber lighten-2"
-                  tile
-                  flat
-                >
+              <v-flex v-for="n in 2" :key="n" d-flex>
+                <v-card color="amber lighten-2" tile flat>
                   <v-card-text>{{ lorem.slice(0, 40) }}</v-card-text>
                 </v-card>
               </v-flex>
@@ -72,14 +48,12 @@
 </template>
 
 <script>
-  export default {
-    name: 'Grid',
-    data: () => ({
-      lorem: `Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.`
-    })
-  }
+export default {
+  data: () => ({
+    lorem: `Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.`
+  })
+};
 </script>
 
 <style>
-
 </style>

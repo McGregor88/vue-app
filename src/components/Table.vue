@@ -64,7 +64,6 @@
 
 <script>
 export default {
-  name: "Table",
   data: () => ({
     dialog: false,
     headers: [
