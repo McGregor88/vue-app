@@ -2,7 +2,7 @@
   <v-app>
     <Header/>
     <v-content>
-      <HelloWorld/>
+      <Grid/>
     </v-content>
     <Footer/>
   </v-app>
@@ -10,14 +10,14 @@
 
 <script>
 import Header from './components/Header'
-import HelloWorld from './components/HelloWorld'
+import Grid from './components/Grid'
 import Footer from './components/Footer'
 
 export default {
   name: 'App',
   components: {
     Header,
-    HelloWorld,
+    Grid,
     Footer
   },
   data () {
