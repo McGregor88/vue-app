@@ -6,6 +6,11 @@
 
     <v-spacer></v-spacer>
 
+    <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn flat to="/">Home</v-btn>
+      <v-btn flat to="/about">About</v-btn>
+    </v-toolbar-items>
+
     <v-btn icon>
       <v-icon>search</v-icon>
     </v-btn>
@@ -25,15 +30,14 @@
 </template>
 
 <script>
-  export default {
-    data () {
-        return {
-        //
-        }
-    }
+export default {
+  data() {
+    return {
+      //
+    };
   }
+};
 </script>
 
 <style>
-
 </style>
