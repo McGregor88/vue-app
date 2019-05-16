@@ -8,8 +8,7 @@
       <v-spacer></v-spacer>
 
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat to="/">Home</v-btn>
-        <v-btn flat to="/about">About</v-btn>
+        <v-btn flat v-for="item in items" :key="item.title" :to="item.url">{{item.title}}</v-btn>
       </v-toolbar-items>
 
       <v-btn icon>
