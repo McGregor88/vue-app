@@ -17,6 +17,19 @@ export default {
     Header,
     Footer
   },
+  computed: {
+    count () {
+	    return store.state.count
+    }
+  },
+  methods: {
+    increment () {
+      store.commit('increment')
+    },
+    decrement () {
+    	store.commit('decrement')
+    }
+  },
   data() {
     return {
       //
