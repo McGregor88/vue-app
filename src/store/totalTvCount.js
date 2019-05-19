@@ -1,9 +1,4 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-
-Vue.use(Vuex)
-
-export default new Vuex.Store({
+export default {
   state: {
     totalTvCount: 10,
     isLarryHappy: true,
@@ -28,4 +23,4 @@ export default new Vuex.Store({
       }
     }
   }
-})
+}
