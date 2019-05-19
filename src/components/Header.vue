@@ -1,35 +1,14 @@
 <template>
   <div class="header">
-    <v-toolbar dark color="teal lighten-3">
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-
-      <v-toolbar-title class="white--text">Title</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat v-for="item in items" :key="item.title" :to="item.url">{{item.title}}</v-btn>
-      </v-toolbar-items>
-
-      <v-btn icon>
-        <v-icon>search</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>apps</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>refresh</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>more_vert</v-icon>
-      </v-btn>
-    </v-toolbar>
 
     <v-layout wrap>
-      <v-navigation-drawer v-model="drawer" :mini-variant="mini" absolute dark temporary>
+      <v-navigation-drawer 
+        v-model="drawer" 
+        :mini-variant="mini" 
+        absolute 
+        dark 
+        temporary
+      >
         <v-list class="pa-1">
           <v-list-tile v-if="mini" @click.stop="mini = !mini">
             <v-list-tile-action>
@@ -57,18 +36,36 @@
         <v-list class="pt-0" dense>
           <v-divider light></v-divider>
 
-          <v-list-tile v-for="item in items" :key="item.title" :to="item.url">
+          <v-list-tile v-for="link in links" :key="link.title" :to="link.url">
             <v-list-tile-action>
-              <v-icon>{{ item.icon }}</v-icon>
+              <v-icon>{{ link.icon }}</v-icon>
             </v-list-tile-action>
 
             <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              <v-list-tile-title>{{ link.title }}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
       </v-navigation-drawer>
     </v-layout>
+
+    <v-toolbar dark color="teal lighten-3">
+      <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"></v-toolbar-side-icon>
+
+      <router-link to="/" tag="span" style="cursor:pointer">
+        <v-toolbar-title class="white--text">Learn English</v-toolbar-title>
+      </router-link>
+
+      <v-spacer></v-spacer>
+
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn flat v-for="link in links" :key="link.title" :to="link.url">
+          <v-icon left>{{ link.icon }}</v-icon>
+          {{link.title}}
+        </v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
+
   </div>
 </template>
 
@@ -77,21 +74,36 @@ export default {
   data() {
     return {
       drawer: null,
-      items: [
+      links: [
         {
-          url: "/",
-          title: "Home",
-          icon: "dashboard"
+          url: "/books",
+          title: "Читать",
+          icon: "visibility"
         },
         {
-          url: "/about",
-          title: "About",
-          icon: "question_answer"
+          url: "/words",
+          title: "Учить слова",
+          icon: "extension"
         },
         {
-          url: "/customer",
-          title: "Customer",
-          icon: "shopping_cart"
+          url: "/profile",
+          title: "Мой кабинет",
+          icon: "account_circle"
+        },
+        {
+          url: "/logout",
+          title: "Выйти",
+          icon: "exit_to_app"
+        },
+        {
+          url: "/signin",
+          title: "Войти",
+          icon: "input"
+        },
+        {
+          url: "/signup",
+          title: "Зарегистрироваться",
+          icon: "lock_open"
         }
       ],
       mini: false,
