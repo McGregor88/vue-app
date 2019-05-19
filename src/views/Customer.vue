@@ -32,24 +32,21 @@
 </template>
 
 <script>
-import { mapState, mapGetter, mapActions } from "vuex"
+import { mapState, mapGetters, mapActions } from 'vuex'
 
 export default {
   name: "customer",
   computed: {
-    totalTvCount () {
-      return this.$store.state.totalTvCount
-    },
-    happyStaff () {
-      return this.$store.getters.happyStaff
-    }
+    ...mapState(["totalTvCount"]),
+    ...mapGetters(["happyStaff"])
   },
   methods: {
+    ...mapActions(["removeTv"]),
     buyTv() {
-      this.$store.dispatch("removeTv", 1)
+      this.removeTv(1)
     },
     buyTwoTvs() {
-      this.$store.dispatch("removeTv", 2)
+      this.removeTv(2)
     }
   }
 };

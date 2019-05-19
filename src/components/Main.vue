@@ -29,4 +29,12 @@ export default {
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
+
+/* Laptop */
+@media only screen and (max-width: 1366px)
+{
+  .v-parallax{
+    height: 632px !important;
+  }
+}
 </style>
