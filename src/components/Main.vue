@@ -17,24 +17,20 @@ export default {
 };
 </script>
 
-<style>
-.v-parallax::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
+<style lang="sass" scoped>
+.v-parallax::after
+  content: ""
+  display: block
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.2)
+  z-index: 1
 
-/* Laptop */
+// Laptop
 @media only screen and (max-width: 1366px)
-{
-  .v-parallax{
-    height: 632px !important;
-  }
-}
+  .v-parallax
+    height: 632px !important
 </style>

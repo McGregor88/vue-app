@@ -26,8 +26,7 @@ export default {
 };
 </script>
 
-<style>
-.body {
-  min-width: 320px;
-}
+<style lang="sass">
+.body
+  min-width: 320px
 </style>

@@ -52,8 +52,7 @@ export default {
 };
 </script>
 
-<style>
-.counter {
-  font-size: 18px;
-}
+<style lang="sass" scoped>
+.counter
+  font-size: 18px
 </style>
