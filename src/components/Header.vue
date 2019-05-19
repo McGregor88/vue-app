@@ -87,6 +87,11 @@ export default {
           url: "/about",
           title: "About",
           icon: "question_answer"
+        },
+        {
+          url: "/customer",
+          title: "Customer",
+          icon: "shopping_cart"
         }
       ],
       mini: false,

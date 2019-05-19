@@ -9,26 +9,14 @@
 </template>
 
 <script>
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
 export default {
   name: "App",
   components: {
     Header,
     Footer
-  },
-  computed: {
-    count () {
-	    return store.state.count
-    }
-  },
-  methods: {
-    increment () {
-      store.commit('increment')
-    },
-    decrement () {
-    	store.commit('decrement')
-    }
   },
   data() {
     return {
