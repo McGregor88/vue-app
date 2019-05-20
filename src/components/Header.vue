@@ -74,16 +74,21 @@ export default {
   data() {
     return {
       drawer: null,
-      links: [
+      mini: false,
+      right: null
+    };
+  },
+  computed: {
+    isUserAuth() {
+      return this.$store.getters.isUserAuth
+    },
+    links() {
+      return this.isUserAuth ? 
+      [
         {
           url: "/books",
           title: "Читать",
           icon: "visibility"
-        },
-        {
-          url: "/words",
-          title: "Учить слова",
-          icon: "extension"
         },
         {
           url: "/profile",
@@ -94,6 +99,12 @@ export default {
           url: "/logout",
           title: "Выйти",
           icon: "exit_to_app"
+        }
+      ] : [
+        {
+          url: "/books",
+          title: "Читать",
+          icon: "visibility"
         },
         {
           url: "/signin",
@@ -105,10 +116,8 @@ export default {
           title: "Зарегистрироваться",
           icon: "lock_open"
         }
-      ],
-      mini: false,
-      right: null
-    };
+      ]
+    }
   }
 };
 </script>
